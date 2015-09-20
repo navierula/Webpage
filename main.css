@@ -1,0 +1,59 @@
+html,body{
+   margin-left: 7%;
+   margin-right: 7%;
+   margin-top: 0%;
+   margin-bottom: 5%;
+   /*margin: 0;*/
+   font-family: "Helvetica Neue", Helvetica, sans-serif; 
+   font-size: 15px;
+   color: #000000;
+   font-weight: 400;
+}
+
+.title-name{
+	margin-top:2%;
+	margin-bottom:0.5%;
+	text-align: center;
+}
+
+/*.nav-container{
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+.nav{
+
+	text-align: center;
+	margin-right: 2%;
+	margin-left: auto;
+	margin-bottom:2%;
+
+}
+
+.nav li{
+	display: inline;
+
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+
+}
+
+.nav li a{
+	text-decoration: none;
+}
+
+
+
+.profile-pic{
+
+	width: 400px;
+	height: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 3.7%;
+	margin-bottom: 3.8%;
+}
+
+a:link { color: #A80000; text-decoration:none; }
+a:visited { color: #A80000; text-decoration:none; }
