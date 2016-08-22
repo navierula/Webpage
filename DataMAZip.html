@@ -30,11 +30,7 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-
     <![endif]-->
-
-
 
 </head>
 
@@ -84,35 +80,38 @@
 
 <p class="narration">
 
-<center><i class="em em-wave" height="50%" width="50%"></i>    <i class="em em-earth_asia"></i>! </center>
 
-<br>My name is Navie Narula and I am currently a graduate student at Columbia University studying computer science and digital journalism. <br><br>
+<br>For our final project for "Tools and Techniques for Data Mining" at Boston University, Aditi Dass and I examined a dataset retrieved from the Internal Revenue Service. It contained roughly 3,820 rows and 112 columns. Each record pertained to a zip code area in the state of Massachusetts. Several attributes included: adjusted gross income, unemployment rate, and wages and salaries.<br>
 
-I am fascinated by natural language processing. In particular, I hope to explore the potential applications it could have in uncovering literary messages in a tangible way for individuals. Information retrieval in terms of text mining and sentiment analysis in regards to social media sites have also sparked my interest. I am an advocate for storytelling via probabilistic methods and data visualizations&mdash;but also via paper. <br><br>
-
-Ideally, I would like to work as a software engineer and have artificial intelligence or human-computer interaction play a role in my daily work. I want to write code impactfully.<br><br>
-
-I also love connecting with others and learning more about other people. Please feel free to reach out to me if you would like to collaborate on a project, especially a literary or technical one! <br><br>
-<center>
-Fun Facts:<br><br>
-
-<ul>
-  <li>Navie means "butterfly" in Korean.</li><br>
-  <li>I was born and raised in Bangkok, Thailand and can speak Thai fluently.</li><br>
-  <li>I declared my major in computer science during my senior year while at Boston University.</li><br>
+<br>We specifically zoomed on correlations among the number of joint returns and the number of dependents per zip code area.<br>
 
 
-</ul>
-</center>
+<br> Utilizing the statsmodel library in Python, we determined this correlation to be 0.604 (roughly 60 percent). <br>
+
+<center><img src="dat.jpg" class="img-rounded" alt="me" height="40%" width="40%"></center><br>
+
+The x-axis is the number of joint returns and the y-axis is the number of dependents.<br>
+<br>
+
+We then decided to use clustering methods in order to identify densely populated areas. Affinity propogation returned 18 clusters.<br><br>
+
+<center><img src="mass.jpg" class="img-rounded" alt="me" height="40%" width="40%"></center><br>
+
+We discovered that when the population size is accounted for, the mean of dependents (2,870) and the mean of joint returns (2,653) had a correlation coefficient that dell down to 0.253 (roughly 25 percent).<br><br>
+
+Areas with less people also tended to have more dependents per joint return, hinting at more of an aging population. We mapped this outlier to Cape Cod Bay, famous for its retirement homes.<br><br>
+
+More information is available in our <a href="https://github.com/navierula/MAZipProject/blob/master/FinalReport.pdf">final report</a>.<br><br>
+
+<center><a href= "https://github.com/navierula/MAZipProject/blob/master/Poster.pdf"><b>CHECK OUT OUR POSTER!</b></a></center>
 
 
 
 
-    </p>
 
 
-  <center><img src="me.jpg" class="img-rounded" alt="me" height="35%" width="35%"></center>
-   <!-- /.container -->
+
+
 
 
     <!-- jQuery -->
