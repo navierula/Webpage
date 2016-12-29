@@ -1,0 +1,97 @@
+
+
+<!doctype html>
+<html>
+
+<head>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <title>Navraj Narula</title>
+  <link href="css/main.css" rel="stylesheet" type = "text/css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/index.js"></script>
+  
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Noto Serif" rel="stylesheet">
+
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="text/javascript" src="banner.js"></script>
+
+
+<script type="text/javascript">
+    
+    $("#header").addClass("alt");
+    $("#header nav#nav ul li a[href*='index']").addClass("active");
+
+    $(document).ready(function () {
+      $("#banner-subheading").typed({
+        strings: ["analyzing data.", "running a blog.", "teaching a class.", "dreaming about NLP.", "a software engineer."],
+        typeSpeed: 0,
+        backSpeed: 0,
+        backDelay: 1000,
+        showCursor: true,
+        cursorChar: ""
+        });
+      });
+
+  </script>
+
+
+
+
+          <div class="hh2"><font color="#D50C0C">Superhero Schema</div></font>
+          <!--<i class="em em-wave" height="50%" width="50%"></i>    <i class="em em-earth_asia"></i> -->
+          <div class="introNavie2">Why not implement somthing that could potentially save the world?<p>
+            <p>For my assignment for Introduction to Databases, I chose to design a schema that would help organizations affiliated with the government and police force to seek out the assistance of a superhero if human power itself could not solve a crime or catch the culprit.<p>
+              "Help Wanted" contains information about all humans that exist on our planet, specifying which ones are heroes and which ones are villians. Relationships among them are also extensively documented via 11 relations.<p>
+              <center><img src="images/description.jpg"  height="420" width="600"></img></center><p>
+              Each table contains a primary key, which is often the assigned ID of the noun the table refers to. For instance, the crime table has attributes such as the crime ID, location of the crime, the date and time of the crime, and a description of the time. Since the crime ID is unique to every instance, it would be the primary key for the crime table.<p>
+              <p>Linking tables were also created to form relationships between two separate table. For example, the SuperSave table was created to inform the database of which superhero resolved which crime. The crime ID and superhero ID acted as foreign keys to their home tables, Crime and Superhero.<p>
+                <center><img src="images/description2.jpg"  height="420" width="600"></img></center><p>
+                I used SQL Workbench to construct the entire database from scratch, specifying relations and keys for each one. You can check out the entity-relational model below for specifics.<p>
+                <center><img src="images/erm.jpg"  height="420" width="600"></img></center><p>
+                In order to access the database (as well make insertions and deletions), I wrote a script of over 1000 lines in Python. I have also maintained an SQL script if you would like to construct the database for yourself in Workbench.
+
+
+
+<div class="hh1"><font color="#8258FA"><span style="float:right;"><a href="https://github.com/navierula/Relational-Databases" target="_blank">Check it out!</a></div></font></span></p>
+
+<div class="hh1"><font color="#8258FA"><p style="text-align:left;">
+    <a href="index.html">Take me Home!</a>
+    <span style="float:right;"></span></font></div>
+    </p>
+    
+                
+
+
+
+
+       <center><i class="em em-e-mail" height="50%" width="50%"></i> <a href="mailto:nnn2112@columbia.edu">Email&nbsp;&nbsp;&nbsp;&nbsp;</a>   
+
+        <i class="em em-pencil2" height="50%" width="50%"></i> <a href="https://naviewritescode.wordpress.com" target="_blank">Blog&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+        <i class="em em-computer" height="50%" width="50%"></i> <a href="https://github.com/navierula" target="_blank">Github&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+        <i class="em em-mailbox" height="50%" width="50%"></i> <a href="https://devpost.com/navierula" target="_blank">Devpost&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+        <i class="em em-raising_hand" height="50%" width="50%"></i> <a href="https://www.linkedin.com/in/navraj-narula-64b59374" target="_blank">LinkedIn&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+        <i class="em em-bird" height="50%" width="50%"></i> <a href="https://twitter.com/navierula" target="_blank">Twitter</a>
+
+
+</center>
+
+
+
+
+
+
+  </body>
+
+</html>

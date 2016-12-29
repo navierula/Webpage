@@ -1,0 +1,156 @@
+body {
+  background-color: white;
+}
+
+/* Site Nav */
+
+/*.demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+}*/
+
+.details,
+.show,
+.hide:target {
+  display: none;
+  
+}
+
+.hide:target + .show,
+.hide:target ~ .details {
+  display: block;
+  text-decoration: none;
+  ;
+}
+
+a:-webkit-any-link {
+    color: black;
+    text-decoration: none;
+    cursor: black;
+}
+a:hover {
+    color: #D50C0C;
+    text-decoration: none;
+}
+
+
+
+.Row
+{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+    color: #D50C0C;
+}
+.Column
+{
+    display: table-cell;
+    background-color: white;
+    color: #D50C0C;
+
+}
+
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
+}
+
+
+
+summary::-webkit-details-marker {
+  color: #D50C0C;
+}
+summary:focus {
+  outline-style: none;
+}
+
+.hh1 {
+  font-family: 'Pompiere';
+ 
+  font-size: 1.9em;
+  line-height: 1;
+  margin-top: 5%;
+
+  margin-bottom: 0.5em;
+
+  font-weight: 500;
+}
+
+
+.hh2 {
+  font-family: 'Pompiere';
+  text-align: center;
+  font-size: 2.7em;
+  line-height: 1;
+  margin-top: 5%;
+
+  margin-bottom: 0.5em;
+
+  font-weight: 500;
+}
+
+
+.hh3 {
+  font-family: 'Pompiere';
+  text-align: center;
+  color: #D50C0C;
+  font-size: 3.5em;
+  line-height: 1;
+  margin-top: 5%;
+
+  margin-bottom: 0.5em;
+
+  font-weight: 500;
+}
+
+.introNavie {
+  font-family: 'Noto Serif';
+  color: #000000;
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-right:10%;
+  margin-left: 10%;
+  text-align: left;
+}
+
+.introNavie2 {
+  font-family: 'Noto Serif';
+  color: #000000;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-right:10%;
+  margin-left: 10%;
+  text-align: left;
+}
+
+img {
+max-width: 100%;
+}
+
+.container .content {
+    display: none;
+    padding : 5px;
+}
+/*p {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #555;
+  font-size: 28px;
+  line-height: 2;
+  margin: 0px;
+}
+
+p a {
+  font-family: 'Inconsolata';
+  color: blue;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+p a:hover {
+  text-decoration: none;
+}*/
+
+
