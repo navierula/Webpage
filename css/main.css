@@ -150,6 +150,12 @@ max-width: 100%;
     display: none;
     padding : 5px;
 }
+
+mark {
+  background-color: rgba(255,255,0,0.4);
+  color: black;
+}
+
 /*p {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #555;
