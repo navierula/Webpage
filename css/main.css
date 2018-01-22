@@ -142,6 +142,16 @@ summary:focus {
   text-align: left;
 }
 
+.introNavieArch {
+  font-family: 'Noto Serif';
+  color: #000000;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-right:10%;
+  margin-left: 10%;
+  text-align: center;
+}
+
 img {
 max-width: 100%;
 }
