@@ -12,7 +12,8 @@ function draw() {
 
   // ice cream shape
   // arc shifts according to seconds
-  arc(350, 200, 200, 225, map(minute(), 59, 0, 40, 20), 0);
+  //arc(350, 200, 200, 225, map(minute(), 59, 0, 40, 20), 0); <-- doesn't go under cone
+  arc(350, 200, 200, 225, map(minute(), 59, 0, 30, 60), 0);
 
   // chocolate cherry color
   fill('#4d2600');
