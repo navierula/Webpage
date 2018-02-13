@@ -1,5 +1,11 @@
+//var cursive;
+// function preLoad() {
+// 	cursive = loadFont('Amarillo.otf');
+// }
+
 function setup() {
   createCanvas(640, 690);
+  //cursive = loadFont("CurlzMT.ttf");
 }
 
 function draw() {
@@ -7,6 +13,8 @@ function draw() {
 	// define relevant time arrays
 	var seconds_minutes_array;
 	var hours_array;
+
+	//var cursive = loadFont("CurlzMT.ttf");
 	
 	seconds_minutes_array = ["zero", "one", "two", "three", "four",
 	"five", "six", "seven", "eight", "nine", "ten", "eleven",

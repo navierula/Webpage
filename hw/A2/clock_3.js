@@ -13,7 +13,7 @@ function draw() {
     scale(0.3,0.3);
     translate(width_change_seconds,1400);
     drawTree(153, 204, 0, 200);
-    width_change_seconds += width/20;
+    width_change_seconds += width/20; //1200/60
     pop();
   }
 
@@ -24,7 +24,7 @@ function draw() {
     scale(0.35,0.35);
     translate(width_change_minutes,1050);
     drawTree(85, 128, 0, 170);
-    width_change_minutes += width/20;
+    width_change_minutes += width/20; //size of width divided 60 
     pop();
   }
 
