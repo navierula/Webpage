@@ -14,7 +14,7 @@ function preload() {
 
 function setup() {
   //createCanvas(70, 4000);
-  createCanvas(700, 2790);
+  createCanvas(700, 3200);
 
  // console.log(nytResponse);
   extractAbstracts();

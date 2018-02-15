@@ -22,7 +22,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(900, 600);
+  createCanvas(900, 800);
 
   extractSections();
 
