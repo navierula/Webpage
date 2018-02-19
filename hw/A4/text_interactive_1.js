@@ -28,12 +28,13 @@ function draw() {
   noStroke();
 
   var margin = 40;
-  translate(margin, margin);
+  // translate(margin, margin);
+  textAlign(LEFT);
 
-  for (var i = 0; i < titles.length; i++) {
+  for (var i = 1; i < titles.length; i++) {
 
     var words = titles[i].split(" ");
-    var x = 0;
+    var x = 50;
     
 
     for (var j = 0; j < words.length; j++) {
@@ -59,13 +60,13 @@ function draw() {
       }
 
       ellipse(x, i*50, wordWidth*0.5, wordWidth*0.5);
+
+      if (dist(mouseX, mouseY, x, i*50) < (wordWidth*0.5)/2) {
+        fill(255);
+        text(words[j], x, i*50); // put in sep loop
+      }
+
       x += 70;
-
-    if (dist(mouseX, mouseY, x, i*50) < (wordWidth*0.5)/2) {
-      fill(255);
-      text(words[j], x, i*50);
-    }
-
     }
 
   }
