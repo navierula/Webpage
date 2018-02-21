@@ -28,10 +28,13 @@ function draw() {
   background(51, 0, 24);
   noStroke();
 
-  var margin = 40;
+  var margin = 60;
 
   textAlign(CENTER);
+  push();
+  fill(255);
   text("Word Size of NYT Headlines as Bubbles", 142, 20);
+  pop();
   textFont(cartoonFont);
   textSize(15);
   for (var i = 1; i < titles.length; i++) {
