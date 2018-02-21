@@ -3,6 +3,7 @@ var des_facets = [];
 var titles = [];
 var cartoonFont;
 
+
 function preload() {
 
   // perform API call to connect to NYT top stories
@@ -10,15 +11,15 @@ function preload() {
   var apikey = "5624c871205c4fc7aa6265643581d711"; 
   url += "?api-key=" + apikey;
 
-  cartoonFont = loadFont("SFCartoonistHand-Bold.ttf");
   // retrieve response
+  cartoonFont = loadFont("SFCartoonistHand-Bold.ttf");
+
   nytResponse = loadJSON(url);
 }
 
 function setup() {
-  createCanvas(1000, 2500);
+  createCanvas(1200, 2500);
 
- //console.log(nytResponse);
   extractNYTData();
 }
 
@@ -28,17 +29,29 @@ function draw() {
   noStroke();
 
   var margin = 40;
-  // translate(margin, margin);
-  textAlign(LEFT);
 
+  textAlign(CENTER);
+  text("Word Size of NYT Headlines as Bubbles", 142, 20);
+  textFont(cartoonFont);
+  textSize(15);
   for (var i = 1; i < titles.length; i++) {
 
     var words = titles[i].split(" ");
     var x = 50;
-    
 
     for (var j = 0; j < words.length; j++) {
       var wordWidth = textWidth(words[j]);
+      console.log(j);
+
+    if (dist(mouseX, mouseY, x, i*50) < (wordWidth*0.5)/2) {
+      fill(64, 64, 64);
+      ellipse(x, i*50, wordWidth*0.5, wordWidth*0.5);
+      fill(255);
+      text(words[j], x, i*50);
+      x += 70;
+    }
+
+    else {
 
       if (wordWidth < 15) {
         fill(255, 204, 229, 170);
@@ -58,19 +71,13 @@ function draw() {
       else {
         fill(153, 0, 71, 170);
       }
-
       ellipse(x, i*50, wordWidth*0.5, wordWidth*0.5);
-
-      if (dist(mouseX, mouseY, x, i*50) < (wordWidth*0.5)/2) {
-        fill(255);
-        text(words[j], x, i*50); // put in sep loop
-      }
-
       x += 70;
     }
 
   }
 
+}
 }
 //des_facet= descriptive subject terms
 function extractNYTData() {
@@ -80,7 +87,5 @@ function extractNYTData() {
     append(des_facets, d);
     append(titles, t);
   }
-  // console.log(des_facets); 
-  // console.log(titles);
 }
 
