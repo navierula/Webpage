@@ -6,19 +6,56 @@ busCompanyCount = {};
 totalTimeDelayedbyBusCompany = {};
 avgTime = {}
 var nums;
+  var avg_ = [];
+  var bus_name_ = [];
+  var items = [];
 
 function preload() {
   data = loadTable("data/Bus_Breakdown_and_Delays.csv", "csv", "header");
 }
 
 function setup() {
+
+  createCanvas(1300,3300);
   avgTimeDelayedByBusCompany();
-  createCanvas(900,900);
+  orderData();
 }
 
 function draw() {
 
-  background(64,64,64);
+  background(255, 230, 204);
+  push();
+  fill(204, 105, 0); 
+  textSize(25);
+  text("Average Bus Delay Times by Bus Company", 40, 30);
+  pop();
+
+  var x,y,w,h;
+  margin = 40;
+  translate(margin,margin);
+
+
+  noStroke();
+  fill(255, 156, 51);
+
+
+  for (var i = 0; i < items.length; i++) {
+    x = 0;
+    y = ((height+20)*(i/items.length));
+    w = (width+20)/50*items[i][1];
+    h = ((height+20)/items.length)-5;
+    //console.log(items[i][0]);
+
+    push();                    
+    translate(x,y);            
+    rect(0,0,w,h);             
+    fill(204, 105, 0); 
+    textStyle(BOLD);                
+    text(items[i][0],10,(h+10)/2);      
+    pop();                    
+  }
+
+
 }
 
 function avgTimeDelayedByBusCompany() {
@@ -57,10 +94,32 @@ function avgTimeDelayedByBusCompany() {
  delete totalTimeDelayedbyBusCompany["RELIANT TRANS, INC. (B232"];
  delete totalTimeDelayedbyBusCompany["`"];
 
-
 var avgDelay;
 for (var key in busCompanyCount) {
   avgDelay = totalTimeDelayedbyBusCompany[key]/busCompanyCount[key];
   avgTime[key] = avgDelay;
 }
 }
+
+function orderData() {
+
+    // Create items array
+items = Object.keys(avgTime).map(function(key) {
+    return [key, avgTime[key]];
+});
+  //Sort the array based on the second element
+items.sort(function(first, second) {
+    return second[1] - first[1];
+});
+
+//console.log(items);
+
+
+//   for (var key in avgTime) {
+//     append(bus_name_, key);
+//     append(avg_, avgTime[key]);
+// }
+
+}
+
+
