@@ -11,12 +11,12 @@ var nums;
   var items = [];
 
 function preload() {
-  data = loadTable("data/Bus_Breakdown_and_Delays.csv", "csv", "header");
+  data = loadTable("data/school_bus_delays_cleaned.csv", "csv", "header");
 }
 
 function setup() {
 
-  createCanvas(1300,3300);
+  createCanvas(1600,1700); //3300
   avgTimeDelayedByBusCompany();
   orderData();
 }
@@ -38,12 +38,14 @@ function draw() {
   noStroke();
   fill(255, 156, 51);
 
+  var new_height = 3300;
+  var new_width = 2000;
 
   for (var i = 0; i < items.length; i++) {
     x = 0;
-    y = ((height+20)*(i/items.length));
-    w = (width+20)/50*items[i][1];
-    h = ((height+20)/items.length)-5;
+    y = ((new_height-20)*(i/items.length))*0.5;
+    w = (new_width+20)/80*items[i][1];
+    h = ((new_height+20)/items.length)-30;
     //console.log(items[i][0]);
 
     push();                    
@@ -71,28 +73,26 @@ function avgTimeDelayedByBusCompany() {
     }
   }
 
- var val;
- nums = ["0","1","2","3","4","5","6","7","8","9"];
+ //var val;
+ //nums = ["0","1","2","3","4","5","6","7","8","9"];
  for (var i = 0; i < timeDelayed.length; i++) {
-  if (timeDelayed[i].length > 2 && nums.includes(timeDelayed[i].slice(0,1))) {
-    if (nums.includes(timeDelayed[i].slice(1,2))) {
-      val = Number(timeDelayed[i].slice(0,2));
-  }
-  else {
-    val = Number(timeDelayed[i].slice(0,1));
-  }
-  }
+  //console.log(typeof(Number(timeDelayed[i])));
+  // if (timeDelayed[i].length > 2 && nums.includes(timeDelayed[i].slice(0,1))) {
+  //   if (nums.includes(timeDelayed[i].slice(1,2))) {
+  //     val = Number(timeDelayed[i].slice(0,2));
+  // }
+  // else {
+  //   val = Number(timeDelayed[i].slice(0,1));
+  // }
+  // }
   if (busCompany[i] in totalTimeDelayedbyBusCompany) {
-    totalTimeDelayedbyBusCompany[busCompany[i]] += val;
+    totalTimeDelayedbyBusCompany[busCompany[i]] += Number(timeDelayed[i]);
   }
   else {
-    totalTimeDelayedbyBusCompany[busCompany[i]] = val;
+    totalTimeDelayedbyBusCompany[busCompany[i]] = Number(timeDelayed[i]);
   }
  }
- delete busCompanyCount["RELIANT TRANS, INC. (B232"];
- delete busCompanyCount["`"];
- delete totalTimeDelayedbyBusCompany["RELIANT TRANS, INC. (B232"];
- delete totalTimeDelayedbyBusCompany["`"];
+
 
 var avgDelay;
 for (var key in busCompanyCount) {
@@ -112,14 +112,15 @@ items.sort(function(first, second) {
     return second[1] - first[1];
 });
 
-//console.log(items);
+console.log(avgTime);
 
 
-//   for (var key in avgTime) {
+// for (var key in avgTime) {
 //     append(bus_name_, key);
 //     append(avg_, avgTime[key]);
 // }
 
 }
+
 
 
