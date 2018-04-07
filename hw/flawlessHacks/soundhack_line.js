@@ -48,6 +48,9 @@ function setup() {
 }
 
 function draw() {
+  background(0);
+
+  if (drawAgain) {
 
   background(27, 185, 150);
   var vol = amp.getLevel();
@@ -79,20 +82,20 @@ function draw() {
   line(volhistory.length, 0, volhistory.length, height);
   pop();
 
-
+}
 
 }
 
 function mySong() {
   var item = sel.value();
   switch(item) {
-    case "Song 1":
+    case "Crazy In Love":
       drawAgain = true;
       song_2.stop();
       song_1.play();
       currentSong = song_1;
       break;
-    case "Song 2":
+    case "If I Were A Boy":
       drawAgain = true;
       song_1.stop();
       song_2.play();
