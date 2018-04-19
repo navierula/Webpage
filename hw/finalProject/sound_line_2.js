@@ -75,7 +75,7 @@ function draw() {
 
   if (drawAgain) {
 
-  background(27, 185, 150);
+  background(0);
   var vol = amp.getLevel();
   volhistory.push(vol);
   stroke(255);

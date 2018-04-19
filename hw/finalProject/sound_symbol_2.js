@@ -4,6 +4,7 @@ var drawAgain = false;
 var currentSong;
 
 var volhistory = [];
+var state;
 
 function toggleSong() {
   if (currentSong.isPlaying()) {
@@ -69,7 +70,11 @@ for (var i = 0; i < 5; i++) {
   incr += 60;
 }
 
-if (drawAgain) {
+// if (state == 0) {
+//   background(255);
+// }
+
+if (state == 1) {
 
   var vol = amp.getLevel();
   volhistory.push(vol);
@@ -84,22 +89,51 @@ if (drawAgain) {
     //ellipse(i,y, 5, 5);
     //console.log(volhistory[i]);
     star(300, 200, volhistory[i]*1000, volhistory[i]*100, volhistory[i]*100); 
-  }
+  } 
 }
+
+if (state == 2) {
+
+  var vol = amp.getLevel();
+  volhistory.push(vol);
+  stroke(255,0,0);
+  noFill();
+  push();
+  var currentY = map(vol, 0, 1, height, 0);
+  //translate(0, height / 2 - currentY);
+
+  for (var i = 0; i < volhistory.length; i++) {
+    var y = map(volhistory[i], 0, 1, height, 0);
+    //ellipse(i,y, 5, 5);
+    //console.log(volhistory[i]);
+    star(300, 200, volhistory[i]*1000, volhistory[i]*100, volhistory[i]*100); 
+  } 
+}
+
+else if (state == 3) {
+    fill(0,255,0);
+    rect(200, 200, 100, 100);
+  }
+
+
 
 }
 
 function mousePressed() {
   if (dist(mouseX, mouseY, 50, 40) < 30/2) {
-    drawAgain = true;
+    state = 1;
     ang_f.play();
+   
   }
   else if (dist(mouseX, mouseY, 50, 40+60) < 30/2) {
-    drawAgain = true;
+    state = 2;
     dis_f.play();
+    redraw();
+
   }
 
   else if (dist(mouseX, mouseY, 50, 40+60+60) < 30/2) {
+    state = 3;
     drawAgain = true;
     fea_f.play();
   }
@@ -113,6 +147,8 @@ function mousePressed() {
     drawAgain = true;
     sad_f.play();
   }
+
+ 
 }
 
 // from p5.js
@@ -130,5 +166,7 @@ function star(x, y, radius1, radius2, npoints) {
   }
   endShape(CLOSE);
 }
+
+
 
 
