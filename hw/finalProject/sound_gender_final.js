@@ -107,11 +107,12 @@ function preload() {
 
 function setup() {
 
-	createCanvas(1300, 700);
+	createCanvas(1300, 610);
 	amp = new p5.Amplitude();
   frameRate(10);
   img_f = loadImage("woman_face.jpg");
   img_m = loadImage("man_face.jpg");
+  img_h = loadImage("headphones.jpg")
 	
 }
 
@@ -120,8 +121,10 @@ background(0);
 noStroke();
 img_f.resize(600,600);
 img_m.resize(600,600);
-image(img_f, -410, 30);
+img_h.resize(30,30);
+image(img_f, -390, 30);
 image(img_m, 1090, -40);
+image(img_h, (width/2)-15, 550);
 
 incr = 150;
 for (var i = 0; i < 5; i++) {
@@ -160,36 +163,36 @@ text("Emotion Echo Chamber", (width/2), 60);
 pop();
 
 push();
-textSize(13);
+textSize(30);
 fill(255);
 textAlign(CENTER);
 textFont(exo);
-text("Anne Frank once said:", (width/2), 140);
-text("'But feelings can't be ignored...",(width/2), 155);
-text("no matter how unjust or ungrateful they seem.'", (width/2), 170);
+// text("Anne Frank once said:", (width/2), 140);
+// text("'But feelings can't be ignored...",(width/2), 155);
+// text("no matter how unjust or ungrateful they seem.'", (width/2), 170);
 
-text("Emotions pervade every aspect of our lives",(width/2), 195);
-text("and sometimes are most visible in the way we choose", (width/2), 210);
-text("to communicate thoughts to one another.", (width/2), 225);
+// text("Emotions pervade every aspect of our lives",(width/2), 195);
+// text("and sometimes are most visible in the way we choose", (width/2), 210);
+// text("to communicate thoughts to one another.", (width/2), 225);
 
-text("This project visualizes the amplitude of utterances", (width/2), 240);
-text("pertaining to five emotion categories:",(width/2), 255);
+// text("This project visualizes the amplitude of utterances", (width/2), 240);
+// text("pertaining to five emotion categories:",(width/2), 255);
 
 fill(255, 77, 77);
-text("ANGER", (width/2), 280);
+text("ANGER", (width/2), 160);
 fill(153, 204, 0);
-text("DISGUST", (width/2), 295);
+text("DISGUST", (width/2), 240);
 fill(172, 57, 172);
-text("FEAR",(width/2), 310);
+text("FEAR",(width/2), 330);
 fill(255, 255, 77);
-text("HAPPINESS",(width/2), 325);
+text("HAPPINESS",(width/2), 410);
 fill(51, 153, 255);
-text("SADNESS",(width/2), 340);
+text("SADNESS",(width/2), 500);
 fill(255);
-text("Speech on the left is spoken by females.", (width/2), 365);
-text("Speech on the right is spoken by males.", (width/2), 380);
+// text("Speech on the left is spoken by females.", (width/2), 365);
+// text("Speech on the right is spoken by males.", (width/2), 380);
 
-text("Data was retrieved from the CREMA-D dataset.", (width/2), 405);
+// text("Data was retrieved from the CREMA-D dataset.", (width/2), 405);
 
 
 // text("This project seeks to visualize the differences")
