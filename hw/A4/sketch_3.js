@@ -138,9 +138,6 @@ for (var key in busCompanyCount_Two) {
 }
 console.log(mostNotifiedOrNot);
 
-
-
-
 }
 
 // var avgStuNum;
@@ -160,7 +157,7 @@ items = Object.keys(avgStudents).map(function(key) {
 items.sort(function(first, second) {
     return second[1] - first[1];
 });
-console.log(items);
+//console.log(items);
 
 
 // for (var key in avgTime) {
@@ -173,9 +170,9 @@ console.log(items);
 function drawData() {
   margin = 80;
   if (state == 0) {
-    background(230, 230, 255);
+    background(217, 217, 217);
   push();
-  fill(102, 102, 255); 
+  fill(0); 
   textSize(25);
   text("Average Number of Students per Bus Company During Delays", 80, 30);
   pop();
@@ -202,9 +199,9 @@ function drawData() {
   if (mouseX >= x+margin && mouseX <= (x+w)+margin && mouseY >= y+margin && mouseY <= (y+h)+margin) {
     push();
     translate(x,y); 
-    fill(102, 102, 255);
+    fill(255);
     rect(0,0,w,h);
-    fill(179, 179, 255); 
+    fill(140, 140, 140); 
     textStyle(BOLD);                
     text(String(items[i][1]).slice(0,2)+" students",10,(h+10)/2); 
     pop();
@@ -214,9 +211,10 @@ function drawData() {
   else {
 
     push();                    
-    translate(x,y);            
+    translate(x,y); 
+    fill(140, 140, 140);         
     rect(0,0,w,h);             
-    fill(102, 102, 255); 
+    fill(255); 
     textStyle(BOLD);                
     text(items[i][0],10,(h+10)/2);      
     pop();                    
@@ -225,9 +223,9 @@ function drawData() {
 
   }
   else {
-    background(255, 230, 255);
+    background(217, 217, 217);
   push();
-  fill(255, 77, 255); 
+  fill(0); 
   textSize(25);
   text("Were the Majority of Parents Notified of Bus Delays by the Bus Company?", 80, 30);
   pop();
@@ -248,29 +246,43 @@ function drawData() {
     y = ((new_height-20)*(i/items.length))*0.5;
     w = (new_width+20)/20*items[i][1];
     h = ((new_height+20)/items.length)-30;
-    //console.log(items[i][0]);
 
-      if (mouseX >= x+margin && mouseX <= (x+w)+margin && mouseY >= y+margin && mouseY <= (y+h)+margin) {
+    if (mostNotifiedOrNot[items[i][0]] == "No"){
+    fill(153, 0, 0);
+    }
+    else {
+      fill(0, 102, 34);
+    }
     push();
-    translate(x,y); 
-    fill(255, 77, 255);
-    rect(0,0,w,h);
-    fill(255, 204, 255); 
-    textStyle(BOLD);                
-    text(mostNotifiedOrNot[(items[i][0])],10,(h+10)/2); 
+    translate(x,y);
+    textStyle(BOLD); 
+    text(items[i][0],10,(h+10)/2);  
     pop();
 
-  }
-   else {
 
-    push();                    
-    translate(x,y);            
-    rect(0,0,w,h);             
-    fill(255, 77, 255); 
-    textStyle(BOLD);                
-    text(items[i][0],10,(h+10)/2);      
-    pop();                    
-  }
+
+
+  //     if (mouseX >= x+margin && mouseX <= (x+w)+margin && mouseY >= y+margin && mouseY <= (y+h)+margin) {
+  //   push();
+  //   translate(x,y); 
+  //   fill(255, 77, 255);
+  //   rect(0,0,w,h);
+  //   fill(255, 204, 255); 
+  //   textStyle(BOLD);                
+  //   text(mostNotifiedOrNot[(items[i][0])],10,(h+10)/2); 
+  //   pop();
+
+  // }
+  //  else {
+
+  //   push();                    
+  //   translate(x,y);            
+  //   rect(0,0,w,h);             
+  //   fill(255, 77, 255); 
+  //   textStyle(BOLD);                
+  //   text(items[i][0],10,(h+10)/2);      
+  //   pop();                    
+  // }
 }
 
   }
