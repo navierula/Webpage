@@ -28,6 +28,7 @@ u {
 }
 
 
+
 a:-webkit-any-link {
     color: #D50C0C;
     text-decoration: none;
@@ -35,8 +36,14 @@ a:-webkit-any-link {
 }
 a:hover {
     color: #D50C0C;
-    text-decoration: none;
+    text-decoration: line-through;
 }
+
+a.pagelink:link,
+a.pagelink:visited,
+a.pagelink:active { color: #0B07A4; text-decoration: none; cursor:black }
+
+a.pagelink:hover { color: #0B07A4; text-decoration: line-through; }
 
 .profile-pic{
 
