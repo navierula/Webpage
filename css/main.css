@@ -121,6 +121,19 @@ summary:focus {
   font-weight: 500;
 }
 
+.hh3left {
+  font-family: 'Pompiere';
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-top: 0%;
+  margin-left:0%;
+
+  margin-bottom: 0em;
+
+  font-weight: 600;
+}
+
 
 
 .hh3 {
